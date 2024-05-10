@@ -5,7 +5,7 @@ import { forEach } from "cypress/types/lodash";
 
 const log = cy.log
 //Case 1
-describe('template spec', () => {
+describe('Frontend – UI Test Suite 1', () => {
     it('Task 1 Description: Write tests in Cypress which will select correct MCI', () => {
       cy.visit('https://qa-test.cuat.marcura.com/dashboard')
       cy.get('#search-box-mcis').type('Agency Fee').wait(2000)
@@ -15,7 +15,7 @@ describe('template spec', () => {
   }) //Case 1 End
 
 //Case 2
-describe('template spec', () => {
+describe('Frontend – UI Test Suite 2', () => {
   it('Task 2  Description: Write tests in Cypress which will select any Annotation from the list', () => {
     cy.visit('https://qa-test.cuat.marcura.com/dashboard')
     cy.get('#search-box-mcis').type('Agency Fee').wait(2000)
@@ -57,7 +57,7 @@ describe('template spec', () => {
 })//Case 2 End
 
 //Case 3
-describe('template spec', () => {
+describe('Frontend – UI Test Suite 3', () => {
   it('Task 3 Description: Write tests in Cypress which will add value', () => {
     cy.visit('https://qa-test.cuat.marcura.com/dashboard')
     cy.get('#search-box-mcis').type('Agency Fee').wait(2000)
@@ -102,7 +102,7 @@ describe('template spec', () => {
 })//Case 3 End
 
 //Case 4
-describe('template spec', () => {
+describe('Frontend – UI Test Suite 4', () => {
   let globalVariable:String
   it('Task 4 Description: Write tests in Cypress which will check Total', () => {
     cy.visit('https://qa-test.cuat.marcura.com/dashboard')
