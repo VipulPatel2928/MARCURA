@@ -22,7 +22,7 @@ describe('APIs Test Suite 1', () => {
       })
   }) //Case 1 End
 
-  //Case 2
+//Case 2
 describe('APIs Test Suite 2', () => {
     const apiUrl = 'https://exchange.da-desk.com/agency-api/1.1/search/masterCostItems';
     const token = '123'; //
@@ -62,7 +62,7 @@ describe('APIs Test Suite 2', () => {
     });
   }); //End Case 2
 
-  //Case 3
+//Case 3
 describe('APIs Test Suite 3', () => {
     it('Task 3  Description: Write tests in Cypress which are checking non-public API', () => {
         cy.request({
