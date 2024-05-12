@@ -181,7 +181,7 @@ describe('Frontend – UI Test Suite 4', () => {
     })
     })   
 
-    it('Verify the USd Total', () => {
+    it('Verify the USD Total', () => {
       // Access globalVariable outside of any Cypress command
       cy.log('Global Variable Value Outside Test:', globalVariable);
       let strUSDToRemoveUSD : string[] 
