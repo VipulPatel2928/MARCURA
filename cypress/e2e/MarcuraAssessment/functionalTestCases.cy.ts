@@ -141,6 +141,22 @@ describe('Frontend – UI Test Suite 4', () => {
     cy.get('#search-box-mcis').type('Agency Fee').wait(2000)
     cy.xpath('//ul//li[1]//a').click({ multiple: false , force : true})    
     cy.get('#search-box-mcis').should('have.value','Agency Fee')
+    cy.get('#search-box-annotations').type('Transportatio').wait(2000) 
+    cy.xpath('//ul[@class="search-result"]//li//a[contains(text(),"Transportation")]').click({ multiple: false , force : true})    
+    cy.get('#search-box-annotations').should('have.value','Transportation')  
+    cy.get('#master-cost-input').type('222').wait(2000) 
+    cy.get('#master-cost-usd-rate').clear().type('80.53999999999999').wait(1000)
+    cy.get('#master-cost-input').invoke('val').then((Valuetext)=>{
+      log('INR : ', Valuetext)
+    })
+    cy.get('#master-cost-usd-rate').invoke('val').then((Valuetext)=>{
+      log('US $ Rate : ', Valuetext)
+    })
+    cy.xpath('//button[contains(text(),"Add")]').click({force:true}).wait(2000)
+
+    cy.get('#search-box-mcis').type('Agency Fee').wait(2000)
+    cy.xpath('//ul//li[1]//a').click({ multiple: false , force : true})    
+    cy.get('#search-box-mcis').should('have.value','Agency Fee')
     cy.get('#search-box-annotations').type('Interna').wait(2000)
     cy.xpath('//ul[@class="search-result"]//li//a[contains(text(),"Internal")]').click({ multiple: false , force : true})    
     cy.get('#search-box-annotations').should('have.value','Internal')  
@@ -154,21 +170,6 @@ describe('Frontend – UI Test Suite 4', () => {
     })
     cy.xpath('//button[contains(text(),"Add")]').click({force:true}).wait(1000)
     
-    cy.get('#search-box-mcis').type('Agency Fee').wait(2000)
-    cy.xpath('//ul//li[1]//a').click({ multiple: false , force : true})    
-    cy.get('#search-box-mcis').should('have.value','Agency Fee')
-    cy.get('#search-box-annotations').type('Transportatio').wait(2000) 
-    cy.xpath('//ul[@class="search-result"]//li//a[contains(text(),"Transportation")]').click({ multiple: false , force : true})    
-    cy.get('#search-box-annotations').should('have.value','Transportation')  
-    cy.get('#master-cost-input').type('222').wait(2000) 
-    cy.get('#master-cost-usd-rate').clear().type('80.53999999999999').wait(1000)
-    cy.get('#master-cost-input').invoke('val').then((Valuetext)=>{
-      log('INR : ', Valuetext)
-    })
-    cy.get('#master-cost-usd-rate').invoke('val').then((Valuetext)=>{
-      log('US $ Rate : ', Valuetext)
-    })
-    cy.xpath('//button[contains(text(),"Add")]').click({force:true}).wait(2000)
     cy.xpath('//th[text()="Totals"]//..//td[2]//div[2]').invoke('text').then((Valuetext)=>{
       globalVariable = Valuetext
       log('US $ Total : ', Valuetext)
